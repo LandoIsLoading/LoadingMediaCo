@@ -1,0 +1,20 @@
+* {
+    background-color: black;
+}
+header {
+    color: white;
+}
+.sectionOne {
+    background-color: black;
+    width: 100%;
+    height: 25%;
+}
+.subsecOneSecOne {
+    background-color: white;
+    width: 100%;
+    height: 400px;
+    
+}
+.secondaryHeader {
+    color: purple;
+}
