@@ -3,11 +3,11 @@ const flipCards = document.querySelectorAll('.flip-card');
 flipCards.forEach(card => {
     let touchstartX = 0;
     let touchendX = 0;
-    let isTouch = false; // Flag to track if it's a touch event
+    let isTouch = false;
 
     card.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
-        isTouch = true; // Set the flag
+        isTouch = true;
     });
 
     card.addEventListener('touchend', e => {
@@ -15,18 +15,33 @@ flipCards.forEach(card => {
         if (Math.abs(touchendX - touchstartX) < 10) {
             toggleFlip.call(card, e);
         }
-        isTouch = false; // Reset the flag
+        isTouch = false;
     });
 
     card.addEventListener('touchmove', e => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent scrolling
     });
 
-    card.addEventListener('click', e => {
-        if (!isTouch) { // Only prevent default for card flips, not links
-            toggleFlip.call(card, e);
-        }
-    });
+    // NEW: Use a separate touch event for the link
+    const link = card.querySelector('a'); // Select the link inside the card
+    if (link) {
+        link.addEventListener('touchstart', e => {
+            e.stopPropagation(); // Prevent the card's touch events from firing
+        });
+        link.addEventListener('click', e => {
+            if(isTouch){
+                e.preventDefault();
+                window.location.href = link.href;
+            }
+        });
+    } else {
+        card.addEventListener('click', e => {
+            if (!isTouch) {
+                toggleFlip.call(card, e);
+            }
+        });
+    }
+
 });
 
 function toggleFlip(event) {
