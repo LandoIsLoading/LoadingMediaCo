@@ -4,7 +4,7 @@ console.log(myPyra)
 
 while (myPyra.length < 7) {
     
-    myPyra = myPyra + "#";
+    myPyra = myPyra + "#";  
     console.log(myPyra);
 
 }

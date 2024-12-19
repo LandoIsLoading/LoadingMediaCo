@@ -1,123 +1,178 @@
+/* Basic reset and background */
 * {
-    background-color: white;
-
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: sans-serif;
+}
+
 header {
     display: flex;
-    position: sticky;
+    position: fixed;
     top: 0;
-    background-color: transparent;
-    width: auto;
+    left: 0;
+    width: 100%;
+    z-index: 100;
     height: 15vw;
     align-items: center;
     justify-content: space-between;
-    font-size: 3vw;
-    text-align: center;
-    margin: 2vw;
-    
+    padding: 2vw;
 }
+
 .mainLogo {
     width: 15vw;
     height: 15vw;
-    background-color: #6d7ee0;
+    background-color: #5EACED;
     border-radius: 1cap;
-    align-content: center;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
+    background-image: url(/photos_and_images/loading_media_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 150px;
+    max-height: 150px;
 }
-nav{
+
+nav {
     display: flex;
-    flex-direction: row;
+    background-color: white;
     justify-content: space-around;
     height: 10vw;
     width: 70vw;
     align-items: center;
-    border: solid .5vw #6d7ee0;
+    border: solid .5vw #5EACED;
     border-radius: 1.5cap;
-    background-color: #e6e6e6;
-    
 }
+
 .navItem {
-    background-color: #6d7ee0;
+    background-color: #5EACED;
     color: white;
     width: 14vw;
     height: 7vw;
     font-size: 2.75vw;
     border-radius: 1cap;
-    align-content: center;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
-    
-}
-.sectionOne {
-    width: 100%;
-    height: 50vw;
-}
-.subsecOneSecOne {
-    background-color: #e6e6e6;
-    width: auto;
-    height: 45vw;
-    margin: 2vw;
-    text-align: center;
-    align-content: center;
-    color: #6d7ee0;
-    font-size: 15vw;
-    font-family: sans-serif;
-    border-radius: .5cap;
-    cursor: pointer;
-    border: solid .5vw #6d7ee0;
-
-    
-}
-.sectionTwo {
     display: flex;
-    width: 100%;
-    height: 50vw;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.subsecTwoSecTwo,  .subsecOneSecTwo {
-    background-color: #e6e6e6;
-    width: 50%;
-    height: 45vw;
-    text-align: center;
-    align-content: center;
-    margin: 2vw;
-    font-size: 10vw;
-    font-family: sans-serif;
-    border-radius: .5cap;
-    color: #6d7ee0;
-    cursor: pointer;
-    border: solid .5vw #6d7ee0;
 
-}
-.sectionThree , .sectionFour {
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+    margin-top: 15vw;
     width: 100%;
-    height: 50vw;
 }
-.subsecOneSecThree , .subsecOneSecFour {
-    background-color: #e6e6e6;
-    width: auto;
-    height: 45vw;
+
+#bioContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.bio-cards {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    gap: 5vw;
+}
+
+.flip-card {
+    width: 40vw;
+    max-width: 500px;
+    height: 25vw;
+    perspective: 1000px;
+    margin-bottom: 5vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.welcome-card {
+    width: 85vw;
+    max-width: 1200px;
+    height: 25vw;
+    margin-bottom: 5vw;
+}
+
+.welcome-card .flip-card-front,
+.welcome-card .flip-card-back {
+    font-size: 5vw;
+}
+
+/* Styles for Services and Contact card rectangular shape */
+#sectionThree,
+#sectionFour {
+    width: 85vw;
+    max-width: 750px;
+    height: 25vw;
+}
+
+#sectionThree .flip-card-front,
+#sectionThree .flip-card-back,
+#sectionFour .flip-card-front,
+#sectionFour .flip-card-back {
+    font-size: 4vw;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: .5cap;
-    margin: 2vw;
+    border: solid .5vw #5EACED;
+    background-color: #e6e6e6;
+    color: #5EACED;
+    font-size: 5vw;
     text-align: center;
-    align-content: center;
-    font-size: 10vw;
-    font-family: sans-serif;
-    color: #6d7ee0 ;
-    cursor: pointer;
-    border: solid .5vw #6d7ee0;
 }
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#emailLink,
 #githubLink {
     text-decoration: none;
-    color: #6d7ee0;
-    cursor: pointer;
-    font-size: 4vw;
+    color: #5EACED;
+    font-size: 3vw;
 }
 
 footer {
     text-align: center;
-    color: #6d7ee0;
+    color: #5EACED;
+    padding: 1vw;
+}
+
+#cardBackGoal {
+    font-size: small;
+    border-radius: .5cap;
+}
+#cardBackBio {
+    font-size: small;
+    margin: 5px;
 }

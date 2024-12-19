@@ -2,55 +2,60 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lando is Loading</title>
 </head>
-<header> 
-    <a class="mainLogo" href="">Loading...<br>Media</a>
+<header>
+    <a class="mainLogo" href=""></a>
     <nav>
-        <a class="navItem" href=#subsecOneSecOne>Welcome</a>
-        <a class="navItem"  href=#subsecOneSecTwo>Bio</a>
-        <a class="navItem"  href=#subsecOneSecThree>Sec 3</a>
-        <a class="navItem"  href=#subsecOneSecFour>Contact</a>
+        <a class="navItem" href="#sectionOne">Welcome</a>
+        <a class="navItem" href="#bioContainer">Bio</a>
+        <a class="navItem" href="#sectionThree">Services</a>
+        <a class="navItem" href="#sectionFour">Contact</a>
     </nav>
 </header>
-
 <body>
-    <div class="mainPage"> <!--THIS IS THE START OF THE MAIN PAGE DIV-->
-        
-        <div class="sectionOne"> <!--THIS IS THE START OF SEC1-->
-            <div id="subsecOneSecOne" class="subsecOneSecOne">  <!--THIS IS THE START OF SUBSEC1 SEC1-->
-                HOWDY!🤠
-            </div> <!--THIS IS THE END OF SUBSEC1 SEC1-->
-        </div> <!--THIS IS THE END OF SEC1-->
+    <div class="mainPage">
+        <div class="flip-card welcome-card" id="sectionOne">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">HOWDY!🤠</div>
+                <div class="flip-card-back">Welcome to Loading Media Co.🐤</div>
+            </div>
+        </div>
 
-        <div class="sectionTwo"> <!--THIS IS THE START OF SEC2-->
-            <div id="subsecOneSecTwo" class="subsecOneSecTwo">  <!--THIS IS THE START OF SUBSEC1 SEC2-->
-                WHO AM I?
-            </div> <!--THIS IS THE END OF SUBSEC1 SEC2-->
-            <div class="subsecTwoSecTwo">  <!--THIS IS THE START OF SUBSEC2 SEC2-->
-                GOAL:
-            </div> <!--THIS IS THE END OF SUBSEC2 SEC2-->
-        </div> <!--THIS IS THE END OF SEC2-->
+        <div id="bioContainer">
+            <div class="bio-cards">
+                <div class="flip-card" id="whoAmI">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Who Am I?</div>
+                        <div class="flip-card-back" id="cardBackBio"><p id="cardBackBio">Orlando, future software engineer & college student. Building the digital world, one line of code at a time. Obsessed with tech & always learning.</p></div>
+                    </div>
+                </div>
 
-        <div class="sectionThree"> <!--THIS IS THE START OF SEC3-->
-            <div id="subsecOneSecThree" class="subsecOneSecThree">  <!--THIS IS THE START OF SUBSEC1 SEC3-->
-                PROJECTS
-            </div> <!--THIS IS THE END OF SUBSEC1 SEC3-->
-        </div> <!--THIS IS THE END OF SEC3-->
+                <div class="flip-card" id="goal">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Goal</div>
+                        <div class="flip-card-back" id="cardBackGoal"><p></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div class="sectionFour"> <!--THIS IS THE START OF SEC4-->
-            <div id="subsecOneSecFour" class="subsecOneSecFour">  <!--THIS IS THE START OF SUBSEC1 SEC4-->
-                CONTACT
-            </div> <!--THIS IS THE END OF SUBSEC1 SEC4-->
-        </div> <!--THIS IS THE END OF SEC4-->
+        <div class="flip-card" id="sectionThree">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Services Offered</div>
+                <div class="flip-card-back">SERVICES</div>
+            </div>
+        </div>
 
-    </div> <!--THIS IS THE END OF THE MAIN PAGE DIV-->
-    
-
-    
+        <div class="flip-card" id="sectionFour">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Contact</div>
+                <div class="flip-card-back"><a id="emailLink" href="mailto:loading.media.co@gmail.com">CONTACT</a></div>
+            </div>
+        </div>
+    </div>
 </body>
-<footer>THANK YOU!<br>MADE BY : ORLANDO GUTIERREZ<br><a id="githubLink" href="https://github.com/Lando-GZ" target="_blank">GITHUB</a></footer>
+<footer>THANK YOU!<br>MADE BY : ORLANDO GUTIERREZ<br><a id="githubLink" href="https://github.com/LandoIsLoading" target="_blank">GITHUB</a></footer>
 </html>
