@@ -1,23 +1,30 @@
-// Function to handle the flip on tap or click
+// Function to handle the flip on click or touch
 document.querySelectorAll('.flip-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (event) => {
+        // If the click is on the link inside the contact card, don't flip the card
+        if (event.target.closest('#emailLink')) {
+            return;
+        }
+        card.classList.toggle('flipped');
+    });
+
+    // Mobile touch event handling
+    card.addEventListener('touchstart', (event) => {
+        // If the touch is on the link inside the contact card, don't flip the card
+        if (event.target.closest('#emailLink')) {
+            return;
+        }
         card.classList.toggle('flipped');
     });
 });
 
-// Prevent flipping for the Contact card if link is clicked
-const contactCard = document.getElementById('sectionFour');
+// Ensure clicking the email link doesn't trigger the flip action
 const emailLink = document.getElementById('emailLink');
-
-// Ensure that clicking the email link does not flip the card
-emailLink.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent the click event from triggering the card flip
-});
-
-// For mobile responsiveness (touch events)
-document.querySelectorAll('.flip-card').forEach(card => {
-    card.addEventListener('touchstart', () => {
-        card.classList.toggle('flipped');
+if (emailLink) {
+    emailLink.addEventListener('click', (event) => {
+        // Prevent the card from flipping when clicking the email link
+        event.stopPropagation();
     });
-});
+}
+
 
