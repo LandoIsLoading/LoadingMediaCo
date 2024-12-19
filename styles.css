@@ -125,7 +125,7 @@ nav {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -172,12 +172,4 @@ footer {
 }
 .listOfServices {
     font-size: 5vw;
-    float: left;
-
-}
-#scontactFront {
-    font-size: larger;
-}
-#emailLink{
-    font-size: 8vw;
 }
