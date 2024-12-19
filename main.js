@@ -4,6 +4,7 @@ flipCards.forEach(card => {
     let touchstartX = 0;
     let touchendX = 0;
     let isTouch = false;
+    let linkClicked = false; // Add this flag
 
     card.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
@@ -12,24 +13,25 @@ flipCards.forEach(card => {
 
     card.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
-        if (Math.abs(touchendX - touchstartX) < 10) {
+        if (Math.abs(touchendX - touchstartX) < 10 && !linkClicked) { // Check linkClicked
             toggleFlip.call(card, e);
         }
         isTouch = false;
+        linkClicked = false; // Reset the flag here
     });
 
     card.addEventListener('touchmove', e => {
         e.preventDefault(); // Prevent scrolling
     });
 
-    // NEW: Use a separate touch event for the link
-    const link = card.querySelector('a'); // Select the link inside the card
+    const link = card.querySelector('a');
     if (link) {
         link.addEventListener('touchstart', e => {
-            e.stopPropagation(); // Prevent the card's touch events from firing
+            e.stopPropagation();
+            linkClicked = true; // Set the flag when the link is touched
         });
         link.addEventListener('click', e => {
-            if(isTouch){
+            if (isTouch) {
                 e.preventDefault();
                 window.location.href = link.href;
             }
@@ -41,7 +43,6 @@ flipCards.forEach(card => {
             }
         });
     }
-
 });
 
 function toggleFlip(event) {
