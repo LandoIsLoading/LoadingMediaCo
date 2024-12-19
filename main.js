@@ -8,11 +8,13 @@ document.querySelectorAll('.flip-card').forEach(card => {
         card.classList.toggle('flipped');
     });
 
-    // Handle touch events for mobile to flip the card on tap
-    card.addEventListener('touchend', (event) => {
+    // Handle tap on mobile devices to flip the card
+    card.addEventListener('touchstart', (event) => {
         if (event.target.closest('#emailLink')) {
             return; // Skip flip if the email link is tapped
         }
+        // Prevents any other touch behavior like scrolling or zooming
+        event.preventDefault(); 
         card.classList.toggle('flipped');
     });
 });
