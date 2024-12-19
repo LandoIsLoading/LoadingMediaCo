@@ -20,6 +20,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2vw;
+    margin: 2vw 0vw;
 }
 
 .mainLogo {
@@ -76,11 +77,12 @@ nav {
     margin-bottom: 1vw;
 }
 
-.bio-cards {
+.bio-cards{
     display: flex;
     justify-content: center;
     width: 90%;
     gap: 5vw;
+    font-size: 8vw;
 }
 
 .flip-card {
@@ -93,31 +95,26 @@ nav {
     flex-shrink: 0;
 }
 
-.welcome-card {
+.welcome-card , #sectionThree, #sectionFour {
     width: 85vw;
     max-width: 1200px;
     height: 25vw;
     margin-bottom: 5vw;
+    font-size: larger;
 }
 
 .welcome-card .flip-card-front,
 .welcome-card .flip-card-back {
-    font-size: 5vw;
+    font-size: 8vw;
 }
 
 /* Styles for Services and Contact card rectangular shape */
-#sectionThree,
-#sectionFour {
-    width: 85vw;
-    max-width: 750px;
-    height: 25vw;
-}
 
 #sectionThree .flip-card-front,
 #sectionThree .flip-card-back,
 #sectionFour .flip-card-front,
 #sectionFour .flip-card-back {
-    font-size: 4vw;
+    font-size: 10vw;
 }
 
 .flip-card-inner {
@@ -145,7 +142,7 @@ nav {
     border: solid .5vw #5EACED;
     background-color: #e6e6e6;
     color: #5EACED;
-    font-size: 5vw;
+    font-size: 8vw;
     text-align: center;
 }
 
@@ -168,11 +165,19 @@ footer {
     padding: 1vw;
 }
 
-#cardBackGoal {
-    font-size: small;
-    border-radius: .5cap;
-}
-#cardBackBio {
-    font-size: small;
+#cardBackBio, #cardBackGoal {
+    font-size: 2.5vw;
     margin: 5px;
+    border-radius: 1cap;
+}
+.listOfServices {
+    font-size: 5vw;
+    float: left;
+
+}
+#scontactFront {
+    font-size: larger;
+}
+#emailLink{
+    font-size: 8vw;
 }
