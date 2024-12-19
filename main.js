@@ -1,11 +1,9 @@
-let myPyra = "#";
+const flipCards = document.querySelectorAll('.flip-card');
 
-console.log(myPyra)
-
-while (myPyra.length < 7) {
-    
-    myPyra = myPyra + "#";  
-    console.log(myPyra);
-
-}
+flipCards.forEach(card => {
+  card.addEventListener('touchstart', function(event) {
+    this.classList.toggle('flip');
+    event.preventDefault(); // Prevent default touch behavior
+  });
+});
 
